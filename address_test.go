@@ -12,10 +12,9 @@ import (
 	"strings"
 	"testing"
 
-	x9_ltcutil "github.com/X9Developers/ltcutil"
+	"github.com/X9Developers/ltcutil"
 	"github.com/btcsuite/golangcrypto/ripemd160"
 	"github.com/ltcsuite/ltcd/chaincfg"
-	"github.com/ltcsuite/ltcutil"
 )
 
 func TestAddresses(t *testing.T) {
@@ -34,7 +33,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "1MirQ9bwyQcGVJPwKUgapu5ouK2E2Ey4gX",
 			encoded: "1MirQ9bwyQcGVJPwKUgapu5ouK2E2Ey4gX",
 			valid:   true,
-			result: x9_ltcutil.TstAddressPubKeyHash(
+			result: ltcutil.TstAddressPubKeyHash(
 				[ripemd160.Size]byte{
 					0xe3, 0x4c, 0xce, 0x70, 0xc8, 0x63, 0x73, 0x27, 0x3e, 0xfc,
 					0xc5, 0x4c, 0xe7, 0xd2, 0xa4, 0x91, 0xbb, 0x4a, 0x0e, 0x84},
@@ -52,7 +51,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "12MzCDwodF9G1e7jfwLXfR164RNtx4BRVG",
 			encoded: "12MzCDwodF9G1e7jfwLXfR164RNtx4BRVG",
 			valid:   true,
-			result: x9_ltcutil.TstAddressPubKeyHash(
+			result: ltcutil.TstAddressPubKeyHash(
 				[ripemd160.Size]byte{
 					0x0e, 0xf0, 0x30, 0x10, 0x7f, 0xd2, 0x6e, 0x0b, 0x6b, 0xf4,
 					0x05, 0x12, 0xbc, 0xa2, 0xce, 0xb1, 0xdd, 0x80, 0xad, 0xaa},
@@ -70,7 +69,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "mrX9vMRYLfVy1BnZbc5gZjuyaqH3ZW2ZHz",
 			encoded: "mrX9vMRYLfVy1BnZbc5gZjuyaqH3ZW2ZHz",
 			valid:   true,
-			result: x9_ltcutil.TstAddressPubKeyHash(
+			result: ltcutil.TstAddressPubKeyHash(
 				[ripemd160.Size]byte{
 					0x78, 0xb3, 0x16, 0xa0, 0x86, 0x47, 0xd5, 0xb7, 0x72, 0x83,
 					0xe5, 0x12, 0xd3, 0x60, 0x3f, 0x1f, 0x1c, 0x8d, 0xe6, 0x8f},
@@ -114,7 +113,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "3QJmV3qfvL9SuYo34YihAf3sRCW3qSinyC",
 			encoded: "3QJmV3qfvL9SuYo34YihAf3sRCW3qSinyC",
 			valid:   true,
-			result: x9_ltcutil.TstAddressScriptHash(
+			result: ltcutil.TstAddressScriptHash(
 				[ripemd160.Size]byte{
 					0xf8, 0x15, 0xb0, 0x36, 0xd9, 0xbb, 0xbc, 0xe5, 0xe9, 0xf2,
 					0xa0, 0x0a, 0xbd, 0x1b, 0xf3, 0xdc, 0x91, 0xe9, 0x55, 0x10},
@@ -154,7 +153,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "3NukJ6fYZJ5Kk8bPjycAnruZkE5Q7UW7i8",
 			encoded: "3NukJ6fYZJ5Kk8bPjycAnruZkE5Q7UW7i8",
 			valid:   true,
-			result: x9_ltcutil.TstAddressScriptHash(
+			result: ltcutil.TstAddressScriptHash(
 				[ripemd160.Size]byte{
 					0xe8, 0xc3, 0x00, 0xc8, 0x79, 0x86, 0xef, 0xa8, 0x4c, 0x37,
 					0xc0, 0x51, 0x99, 0x29, 0x01, 0x9e, 0xf8, 0x6e, 0xb5, 0xb4},
@@ -173,7 +172,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "2NBFNJTktNa7GZusGbDbGKRZTxdK9VVez3n",
 			encoded: "2NBFNJTktNa7GZusGbDbGKRZTxdK9VVez3n",
 			valid:   true,
-			result: x9_ltcutil.TstAddressScriptHash(
+			result: ltcutil.TstAddressScriptHash(
 				[ripemd160.Size]byte{
 					0xc5, 0x79, 0x34, 0x2c, 0x2c, 0x4c, 0x92, 0x20, 0x20, 0x5e,
 					0x2c, 0xdc, 0x28, 0x56, 0x17, 0x04, 0x0c, 0x92, 0x4a, 0x0a},
@@ -208,7 +207,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "02192d74d0cb94344c9569c2e77901573d8d7903c3ebec3a957724895dca52c6b4",
 			encoded: "13CG6SJ3yHUXo4Cr2RY4THLLJrNFuG3gUg",
 			valid:   true,
-			result: x9_ltcutil.TstAddressPubKey(
+			result: ltcutil.TstAddressPubKey(
 				[]byte{
 					0x02, 0x19, 0x2d, 0x74, 0xd0, 0xcb, 0x94, 0x34, 0x4c, 0x95,
 					0x69, 0xc2, 0xe7, 0x79, 0x01, 0x57, 0x3d, 0x8d, 0x79, 0x03,
@@ -230,7 +229,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "03b0bd634234abbb1ba1e986e884185c61cf43e001f9137f23c2c409273eb16e65",
 			encoded: "15sHANNUBSh6nDp8XkDPmQcW6n3EFwmvE6",
 			valid:   true,
-			result: x9_ltcutil.TstAddressPubKey(
+			result: ltcutil.TstAddressPubKey(
 				[]byte{
 					0x03, 0xb0, 0xbd, 0x63, 0x42, 0x34, 0xab, 0xbb, 0x1b, 0xa1,
 					0xe9, 0x86, 0xe8, 0x84, 0x18, 0x5c, 0x61, 0xcf, 0x43, 0xe0,
@@ -253,7 +252,7 @@ func TestAddresses(t *testing.T) {
 				"e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3",
 			encoded: "12cbQLTFMXRnSzktFkuoG3eHoMeFtpTu3S",
 			valid:   true,
-			result: x9_ltcutil.TstAddressPubKey(
+			result: ltcutil.TstAddressPubKey(
 				[]byte{
 					0x04, 0x11, 0xdb, 0x93, 0xe1, 0xdc, 0xdb, 0x8a, 0x01, 0x6b,
 					0x49, 0x84, 0x0f, 0x8c, 0x53, 0xbc, 0x1e, 0xb6, 0x8a, 0x38,
@@ -282,7 +281,7 @@ func TestAddresses(t *testing.T) {
 				"0d45264838c0bd96852662ce6a847b197376830160c6d2eb5e6a4c44d33f453e",
 			encoded: "1Ja5rs7XBZnK88EuLVcFqYGMEbBitzchmX",
 			valid:   true,
-			result: x9_ltcutil.TstAddressPubKey(
+			result: ltcutil.TstAddressPubKey(
 				[]byte{
 					0x06, 0x19, 0x2d, 0x74, 0xd0, 0xcb, 0x94, 0x34, 0x4c, 0x95,
 					0x69, 0xc2, 0xe7, 0x79, 0x01, 0x57, 0x3d, 0x8d, 0x79, 0x03,
@@ -311,7 +310,7 @@ func TestAddresses(t *testing.T) {
 				"37a576782eba668a7ef8bd3b3cfb1edb7117ab65129b8a2e681f3c1e0908ef7b",
 			encoded: "1ExqMmf6yMxcBMzHjbj41wbqYuqoX6uBLG",
 			valid:   true,
-			result: x9_ltcutil.TstAddressPubKey(
+			result: ltcutil.TstAddressPubKey(
 				[]byte{
 					0x07, 0xb0, 0xbd, 0x63, 0x42, 0x34, 0xab, 0xbb, 0x1b, 0xa1,
 					0xe9, 0x86, 0xe8, 0x84, 0x18, 0x5c, 0x61, 0xcf, 0x43, 0xe0,
@@ -339,7 +338,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "02192d74d0cb94344c9569c2e77901573d8d7903c3ebec3a957724895dca52c6b4",
 			encoded: "mhiDPVP2nJunaAgTjzWSHCYfAqxxrxzjmo",
 			valid:   true,
-			result: x9_ltcutil.TstAddressPubKey(
+			result: ltcutil.TstAddressPubKey(
 				[]byte{
 					0x02, 0x19, 0x2d, 0x74, 0xd0, 0xcb, 0x94, 0x34, 0x4c, 0x95,
 					0x69, 0xc2, 0xe7, 0x79, 0x01, 0x57, 0x3d, 0x8d, 0x79, 0x03,
@@ -361,7 +360,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "03b0bd634234abbb1ba1e986e884185c61cf43e001f9137f23c2c409273eb16e65",
 			encoded: "mkPETRTSzU8MZLHkFKBmbKppxmdw9qT42t",
 			valid:   true,
-			result: x9_ltcutil.TstAddressPubKey(
+			result: ltcutil.TstAddressPubKey(
 				[]byte{
 					0x03, 0xb0, 0xbd, 0x63, 0x42, 0x34, 0xab, 0xbb, 0x1b, 0xa1,
 					0xe9, 0x86, 0xe8, 0x84, 0x18, 0x5c, 0x61, 0xcf, 0x43, 0xe0,
@@ -384,7 +383,7 @@ func TestAddresses(t *testing.T) {
 				"cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3",
 			encoded: "mh8YhPYEAYs3E7EVyKtB5xrcfMExkkdEMF",
 			valid:   true,
-			result: x9_ltcutil.TstAddressPubKey(
+			result: ltcutil.TstAddressPubKey(
 				[]byte{
 					0x04, 0x11, 0xdb, 0x93, 0xe1, 0xdc, 0xdb, 0x8a, 0x01, 0x6b,
 					0x49, 0x84, 0x0f, 0x8c, 0x53, 0xbc, 0x1e, 0xb6, 0x8a, 0x38,
@@ -413,7 +412,7 @@ func TestAddresses(t *testing.T) {
 				"40d45264838c0bd96852662ce6a847b197376830160c6d2eb5e6a4c44d33f453e",
 			encoded: "my639vCVzbDZuEiX44adfTUg6anRomZLEP",
 			valid:   true,
-			result: x9_ltcutil.TstAddressPubKey(
+			result: ltcutil.TstAddressPubKey(
 				[]byte{
 					0x06, 0x19, 0x2d, 0x74, 0xd0, 0xcb, 0x94, 0x34, 0x4c, 0x95,
 					0x69, 0xc2, 0xe7, 0x79, 0x01, 0x57, 0x3d, 0x8d, 0x79, 0x03,
@@ -442,7 +441,7 @@ func TestAddresses(t *testing.T) {
 				"537a576782eba668a7ef8bd3b3cfb1edb7117ab65129b8a2e681f3c1e0908ef7b",
 			encoded: "muUnepk5nPPrxUTuTAhRqrpAQuSWS5fVii",
 			valid:   true,
-			result: x9_ltcutil.TstAddressPubKey(
+			result: ltcutil.TstAddressPubKey(
 				[]byte{
 					0x07, 0xb0, 0xbd, 0x63, 0x42, 0x34, 0xab, 0xbb, 0x1b, 0xa1,
 					0xe9, 0x86, 0xe8, 0x84, 0x18, 0x5c, 0x61, 0xcf, 0x43, 0xe0,
@@ -471,7 +470,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "BC1QW508D6QEJXTDG4Y5R3ZARVARY0C5XW7KV8F3T4",
 			encoded: "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4",
 			valid:   true,
-			result: x9_ltcutil.TstAddressWitnessPubKeyHash(
+			result: ltcutil.TstAddressWitnessPubKeyHash(
 				0,
 				[20]byte{
 					0x75, 0x1e, 0x76, 0xe8, 0x19, 0x91, 0x96, 0xd4, 0x54, 0x94,
@@ -490,7 +489,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3",
 			encoded: "bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3",
 			valid:   true,
-			result: x9_ltcutil.TstAddressWitnessScriptHash(
+			result: ltcutil.TstAddressWitnessScriptHash(
 				0,
 				[32]byte{
 					0x18, 0x63, 0x14, 0x3c, 0x14, 0xc5, 0x16, 0x68,
@@ -513,7 +512,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "tb1qw508d6qejxtdg4y5r3zarvary0c5xw7kxpjzsx",
 			encoded: "tb1qw508d6qejxtdg4y5r3zarvary0c5xw7kxpjzsx",
 			valid:   true,
-			result: x9_ltcutil.TstAddressWitnessPubKeyHash(
+			result: ltcutil.TstAddressWitnessPubKeyHash(
 				0,
 				[20]byte{
 					0x75, 0x1e, 0x76, 0xe8, 0x19, 0x91, 0x96, 0xd4, 0x54, 0x94,
@@ -532,7 +531,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7",
 			encoded: "tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7",
 			valid:   true,
-			result: x9_ltcutil.TstAddressWitnessScriptHash(
+			result: ltcutil.TstAddressWitnessScriptHash(
 				0,
 				[32]byte{
 					0x18, 0x63, 0x14, 0x3c, 0x14, 0xc5, 0x16, 0x68,
@@ -555,7 +554,7 @@ func TestAddresses(t *testing.T) {
 			addr:    "tb1qqqqqp399et2xygdj5xreqhjjvcmzhxw4aywxecjdzew6hylgvsesrxh6hy",
 			encoded: "tb1qqqqqp399et2xygdj5xreqhjjvcmzhxw4aywxecjdzew6hylgvsesrxh6hy",
 			valid:   true,
-			result: x9_ltcutil.TstAddressWitnessScriptHash(
+			result: ltcutil.TstAddressWitnessScriptHash(
 				0,
 				[32]byte{
 					0x00, 0x00, 0x00, 0xc4, 0xa5, 0xca, 0xd4, 0x62,
@@ -689,19 +688,19 @@ func TestAddresses(t *testing.T) {
 			var saddr []byte
 			switch d := decoded.(type) {
 			case *ltcutil.AddressPubKeyHash:
-				saddr = x9_ltcutil.TstAddressSAddr(encoded)
+				saddr = ltcutil.TstAddressSAddr(encoded)
 
 			case *ltcutil.AddressScriptHash:
-				saddr = x9_ltcutil.TstAddressSAddr(encoded)
+				saddr = ltcutil.TstAddressSAddr(encoded)
 
 			case *ltcutil.AddressPubKey:
 				// Ignore the error here since the script
 				// address is checked below.
 				saddr, _ = hex.DecodeString(d.String())
 			case *ltcutil.AddressWitnessPubKeyHash:
-				saddr = x9_ltcutil.TstAddressSegwitSAddr(encoded)
+				saddr = ltcutil.TstAddressSegwitSAddr(encoded)
 			case *ltcutil.AddressWitnessScriptHash:
-				saddr = x9_ltcutil.TstAddressSegwitSAddr(encoded)
+				saddr = ltcutil.TstAddressSegwitSAddr(encoded)
 			}
 
 			// Check script address, as well as the Hash160 method for P2PKH and
