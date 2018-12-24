@@ -12,7 +12,7 @@ import (
 	"testing"
 	"unicode"
 
-	"github.com/X9Developers/ltcutil"
+	"github.com/ltcsuite/ltcutil"
 )
 
 // TestAppDataDir tests the API for AppDataDir to ensure it gives expected

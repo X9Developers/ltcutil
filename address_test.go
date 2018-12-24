@@ -12,9 +12,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/X9Developers/ltcutil"
 	"github.com/btcsuite/golangcrypto/ripemd160"
 	"github.com/ltcsuite/ltcd/chaincfg"
+	"github.com/ltcsuite/ltcutil"
 )
 
 func TestAddresses(t *testing.T) {
